@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scissor Paper Rock Game</title>
+    <link rel="stylesheet" href="stylep.css">
+    <style>
+      .devl{
+        text-shadow: 5px 10px 4px rgba(0, 0, 0, 0.7);
+      }
+
+      .level {
+        height: 25rem; 
+        width: 18rem;
+        border-radius: 20px;
+        background-color: rgba(148, 36, 246, 0.578);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .level:hover{
+        border: 2px solid rgb(236, 180, 12);
+      }
+
+      .level-img {
+        width: 18rem; 
+        border-radius: 20px; 
+        padding-top: 20px; 
+        background-color: white; 
+      }
+
+      .start-btn {
+        margin-top: auto;
+        margin-bottom: -10px;
+        align-self: center;
+        font-size: 1.2rem;
+        padding: 7px 15px;
+        border-radius: 10px;
+        border: none;
+        color: white;
+        background-color: blue;
+        opacity: 0.8;
+        cursor: pointer;
+      }
+
+      .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        padding: 10px 15px;
+        box-sizing: border-box;
+      }
+
+      .content {
+        flex-grow: 1;
+        font-size: 1.15rem; 
+        color: beige;
+      }
+
+      #start-btn3, #start-btn2, #start-btn1 {
+        margin-top: 100px;
+        position: absolute;
+        top: 370px;
+      }
+
+      .spinner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        visibility: hidden;
+        top: 40%;
+        left: 50%;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: conic-gradient(#0000 10%, #474bff);
+        -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+        animation: spinner-zp9dbg 1s infinite linear;
+      }
+
+      @keyframes spinner-zp9dbg {
+        to {
+          transform: rotate(1turn);
+        }
+      }
+    </style>
+</head>
+<body>
+  <h1 class="gameOver"></h1>
+  <div class="winnertext-change">
+    <h3 class="game-head2">Welcome to Scissors Paper, Rock!</h3>
+    <h3 class="game-head3">Choose the Level</h3>
+  </div>
+
+  <div class="choose-level">
+    <div class="easy-level level">
+      <div class="level-img"><img src="easy.jpg" alt="easy"></div>
+      <div class="content">
+        You have <b>Unlimited</b> Moves but only 3 rounds to beat the computer. 
+        <br>Try to score higher than the computer to win.
+        <br>Click the button below to begin. Good luck!
+      </div>
+      <button class="start-btn start-lvl" id="start-btn1" alt="easy">Start</button>
+    </div>
+
+    <div class="medium-level level">
+      <div class="level-img"><img src="medium.jpg" alt="medium"></div>
+      <div class="content">
+        You are limited to 2 moves each for Rock, Paper, and Scissors, with 3 fixed rounds. 
+        <br>Plan your moves strategically to outscore the computer.
+        <br>Click the button below to start the game. Best wishes!
+      </div>
+      <button class="start-btn start-lvl" id="start-btn2" alt="medium">Start</button>
+    </div>
+
+    <div class="hard-level level">
+      <div class="level-img"><img src="hard.jpg" alt="hard"></div>
+      <div class="content-wrapper">
+        <div class="content">
+          <span>
+            Each move can only be used once, and there is only 1 round.
+            <br>Make the most of your choices to defeat the computer in this challenging mode.
+            <br>Hit the button below to play. Challenge yourself!
+          </span>
+        </div>
+        <button class="start-btn start-lvl" id="start-btn3" alt="hard">Start</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="game-start">
+    <h2 class="first">Welcome to Rock, Paper, Scissors!</h2>
+    <p>You have 3 chances to play.</p>
+    <button class="start-btn">START</button>
+  </div> 
+
+  <div class="div" type="button"></div>
+
+  <h3 class="round-left">Rounds :</h3>
+  <div class="img-container">
+    <img src="scissor.jpg" alt="scissor" class="img1 img" type="button">
+    <div class="lvl2 lvl" type="button">2</div>
+    <img src="paper.png" alt="paper" class="img2 img" type="button">
+    <div class="lvl1 lvl" type="button" id="s1">1</div>
+    <div>
+      <img src="rock.jpg" alt="rock" class="img3 img" type="button">
+      <div class="lvl3 lvl" type="button" id="s1">3</div>
+    </div>
+  </div>
+
+  <div class="scores">
+    <h4 class="user-Score">Your Score = 0</h4>
+    <h4 class="comp-Score">Computer = 0</h4>
+  </div>
+
+  <div class="text-container">
+    <p class="game-text">pick your move</p>
+    <p>Made by <b><span class="devl">Pranay Meshram</span></b></p>
+  </div>
+
+  <div id="alertBox" class="custom-alert">
+    <i class="fas"></i>
+    <span></span>
+  </div>
+
+  <div id="custom-alert" class="custom-alert hidden">
+    Cant use the move : <span id="alert-id"></span>
+  </div>
+
+  <div class="spinner"></div>
+
+  <audio id="soundWin" src="yeah-boy-2.mp3"></audio>
+  <audio id="soundLose" src="fail.mp3"></audio>
+  <audio id="soundHard" src="lvlUp.mp3"></audio>
+  <audio id="btnSound" src="coin-drop.mp3"></audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
