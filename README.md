@@ -6,7 +6,7 @@ A fun and classic Rock-Paper-Scissors game built using HTML, CSS, and JavaScript
 
 ## 🎯 Features
 
-- 🎮 **Three Difficulty Levels**: Easy, Medium, Hard
+- 🎮 **Three Difficulty Levels**: Easy, Medium, Hard  
   - Computer AI behaves differently in each level.
 - 🧠 **Smart CPU**: CPU makes calculated moves based on the level.
 - 🔊 **Sound Effects**: Includes fun sound effects on level up, winning, and losing.
@@ -28,6 +28,7 @@ A fun and classic Rock-Paper-Scissors game built using HTML, CSS, and JavaScript
 ---
 
 ## ⚠️ Note
+
 - ❌ **Not yet responsive** – best viewed on desktop/laptop screens.
 - 📁 Files contain media like `.mp3` and `.jpg`, which may take time to load on first access.
 
@@ -35,16 +36,17 @@ A fun and classic Rock-Paper-Scissors game built using HTML, CSS, and JavaScript
 
 ## 📁 Files Included
 
-- `index (1)p.html` – Main HTML file
+- `index.html` – Main HTML file
 - `stylep.css` – Styling for the game
 - `app.js` – Game logic and mechanics
 - Media files:
-  - `rock.jpg`, `paper.png`, `scissor.jpg`
-  - `easy.jpg`, `medium.jpg`, `hard.jpg`
+  - Images: `rock.jpg`, `paper.png`, `scissor.jpg`, `easy.jpg`, `medium.jpg`, `hard.jpg`
   - Audio: `coin-drop.mp3`, `fail.mp3`, `lvlUp.mp3`, `yeah-boy-2.mp3`
 
 ---
-## Live Demo
+
+## 🚀 Live Demo
 
 Check out the live version of the game here:  
-https://pranay3106.github.io/rock-paper-scissors-game/
+**🔗 [Rock-Paper-Scissors Game](https://pranay3106.github.io/rock-paper-scissors-game/)**
+
