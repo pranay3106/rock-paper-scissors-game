@@ -44,3 +44,7 @@ A fun and classic Rock-Paper-Scissors game built using HTML, CSS, and JavaScript
   - Audio: `coin-drop.mp3`, `fail.mp3`, `lvlUp.mp3`, `yeah-boy-2.mp3`
 
 ---
+## Live Demo
+
+Check out the live version of the game here:  
+https://pranay3106.github.io/rock-paper-scissors-game/
